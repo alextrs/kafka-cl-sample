@@ -1,0 +1,26 @@
+server:
+  port: 9090
+spring:
+  kafka:
+    properties:
+      schema:
+        registry:
+          url: http://localhost:8081
+    consumer:
+      group-id: test-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        isolation:
+          level: read_committed
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    bootstrap-servers: localhost:29092
+
+logging:
+  level:
+    org:
+      apache:
+        kafka: WARN

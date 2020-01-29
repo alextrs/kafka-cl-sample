@@ -1,0 +1,22 @@
+{
+  "namespace": "com.example.demo",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "lastName",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "dob",
+      "type": "int",
+      "logicalType": "date"
+    }
+  ]
+}
