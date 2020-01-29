@@ -11,7 +11,7 @@ public class DemoApplication {
 		final ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 		MyProducerGateway myProducerGateway = context.getBean(MyProducerGateway.class);
 		final User member = new User("test", "test", 1);
-		myProducerGateway.sendEvent(member, "1");
+		myProducerGateway.sendEvent(member);
 	}
 
 }

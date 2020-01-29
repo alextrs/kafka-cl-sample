@@ -11,7 +11,7 @@ public class MyListener {
 
     @ServiceActivator(inputChannel = "in.event")
     public void handleRuleChangeEvent(@Payload User user) {
-        System.out.println("Hello user" + user.getFirstName());
+        System.out.println("Hello user " + user.getFirstName());
     }
 
 }
